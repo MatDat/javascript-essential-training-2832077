@@ -23,4 +23,22 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  setNewName: function (name) {
+    this.name = name;
+  },
+  setNewColor: function (color) {
+    this.color = color;
+  },
 };
+
+console.log("Before:", backpack.name);
+backpack.setNewName("Allround Backpack");
+console.log("After", backpack.name);
+
+console.log("Before:", backpack.color);
+backpack.setNewColor("Yellow");
+console.log("After:", backpack.color);
+
+console.log("Before:", backpack.strapLength);
+backpack.newStrapLength(10, 10);
+console.log("After:", backpack.strapLength);
