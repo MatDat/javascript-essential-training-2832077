@@ -19,7 +19,6 @@ const everydayPack = new Backpack(
 );
 
 const content = `
-  <article class="backpack" id="everyday">
     <figure class="backpack__image">
       <img src=${everydayPack.image} alt="" />
     </figure>
@@ -45,9 +44,12 @@ const content = `
         everydayPack.lidOpen
       }</span></li>
     </ul>
-  </article>
 `;
 
 const main = document.querySelector(".maincontent");
 
-main.innerHTML = content;
+const newArticle = document.createElement("article"); //Laver ny HTML (start og slut)article-element
+newArticle.classList.add("backpack"); //Giver det nye article-element class="backpack"
+newArticle.setAttribute("id", "everyday"); //Giver det nye article-element id="backpack"
+newArticle.innerHTML = content; //Smider const content ind i det nye article-element
+main.append(newArticle); //Tilføjer det newArticle til HTML .maincontent-elementet
